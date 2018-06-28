@@ -47,5 +47,54 @@ loop do
 	end
 end   
 
-print_list(list) 
+print_list(list)
 
+## Working with loops and REGEXP ##
+
+def get_name
+	name = ""
+	loop do 
+		puts "Please enter your name (min 2 characters)"
+		name = gets.chomp
+
+		if name.length >= 2 && !name.index(/\d/)
+			break
+		else
+			puts "Must contain 2 characts and no numbers"
+		end
+	end
+	name
+end
+
+name = get_name
+# puts "Hi, #{name}" 
+
+## While loop stuff ##
+
+def bottles_left(starting_bottles)
+	i = starting_bottles
+
+	while i > 0
+		puts "#{i} bottles of beer, take one down pass it around #{i - 1}"
+		i -= 1
+	end
+
+puts "No more bottles" 
+end
+
+# bottles_left(10) 
+
+## Until loop stuff ##
+
+def countdown(start)
+	i = start
+	
+	until i == 0
+		puts "#{i}"
+		i -= 1
+	end
+
+puts "Blast off!!!"
+end 
+
+countdown(10)
